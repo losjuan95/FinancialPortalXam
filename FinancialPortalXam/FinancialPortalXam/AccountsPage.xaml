@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinancialPortalXam.AccountsPage">
+    <ContentPage.Content>
+        <ListView x:Name="MyListView"
+            CachingStrategy="RecycleElement">
+
+            <!--Built in Cells-->
+            <!--<ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>-->
+
+            <!--Custom View Cells-->
+            
+                <ListView.ItemTemplate>
+                  <DataTemplate>
+                    <ViewCell>
+                      <StackLayout>
+                        <Label Text="{Binding Name}" 
+                               Style="{DynamicResource ListItemTextStyle}" 
+                               TextColor="Black"/>
+                        <Label Text="{Binding CurrentBalance}" 
+                               Style="{DynamicResource ListItemDetailTextStyle}"
+                                TextColor="Green"/>
+                      </StackLayout>
+                    </ViewCell>
+                  </DataTemplate>
+                </ListView.ItemTemplate>
+                
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinancialPortalXam.Finport">
+    <ContentPage.Content>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="#545454">
+            <StackLayout Padding="0,0,0,10" VerticalOptions="Start">
+                <Button x:Name="gethouseHoldBtn" Text="Get HouseHold" WidthRequest="100" BorderWidth="1">
+                    <Button.TextColor>
+                        <OnPlatform x:TypeArguments="Color" iOS="White"/>
+                    </Button.TextColor>
+                    <Button.BorderColor>
+                        <OnPlatform x:TypeArguments="Color" iOS="White"/>
+                    </Button.BorderColor>
+                </Button>
+            </StackLayout>
+            <StackLayout>
+                <ListView x:Name="MyListView" ItemTapped="Handle_ItemTapped" CachingStrategy="RecycleElement">
+
+                    <!--Built in Cells-->
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <!--Custom View Cells-->
+                    <!--
+	                <ListView.ItemTemplate>
+	                  <DataTemplate>
+		                <ViewCell>
+		                  <StackLayout>
+			                <Label Text="{Binding Text}" 
+				                   Style="{DynamicResource ListItemTextStyle}" />
+			                <Label Text="{Binding Detail}" 
+				                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+		                  </StackLayout>
+		                </ViewCell>
+	                  </DataTemplate>
+	                </ListView.ItemTemplate>
+	                -->
+                </ListView>
+            </StackLayout>
+
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
